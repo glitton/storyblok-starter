@@ -1,3 +1,7 @@
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
 module.exports = {
   siteMetadata: {
     title: `Gatsby Default Starter`,
@@ -38,7 +42,7 @@ module.exports = {
     {
       resolve: "gatsby-source-storyblok",
       options: {
-        accessToken: "aOmKIBX5FbfQK4haKRmaDQtt",
+        accessToken: process.env.ACCESS_TOKEN,
         version: "draft",
         // languages: ['de', 'at'] // Optional parameter. Omission will retrieve all languages by default.
       },
