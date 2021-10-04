@@ -8,6 +8,7 @@ module.exports = {
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-image`,
+    `gatsby-plugin-gatsby-cloud`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -34,5 +35,13 @@ module.exports = {
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
+    {
+      resolve: "gatsby-source-storyblok",
+      options: {
+        accessToken: "aOmKIBX5FbfQK4haKRmaDQtt",
+        version: "draft",
+        // languages: ['de', 'at'] // Optional parameter. Omission will retrieve all languages by default.
+      },
+    },
   ],
 }
