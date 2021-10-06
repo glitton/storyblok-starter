@@ -11,17 +11,15 @@ import DynamicComponent from "../components/dynamicComponent"
 const IndexPage = ({ data, location }) => {
   let story = data.storyblokEntry
   story = useStoryblok(story, location)
-  const content = JSON.parse(story.content)
-  // console.log("content", content)
 
-  const components = content.body.map(blok => {
+  const components = story.content.body.map(blok => {
     return <DynamicComponent blok={blok} key={blok._uid} />
   })
 
   return (
     <Layout>
       <Seo title="Home" />
-      <h1>{content.title}</h1>
+      <h1>{story.content.title}</h1>
       {components}
       <StaticImage
         src="../images/gatsby-astronaut.png"
